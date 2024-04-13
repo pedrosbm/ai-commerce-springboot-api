@@ -52,8 +52,8 @@ public class ClienteController {
     @DeleteMapping("{id}")
     public ResponseEntity<String> deleteUser(@PathVariable Long id) {
         try {
-            repository.deleteById(id);
             verify(id);
+            repository.deleteById(id);
 
             return ResponseEntity.ok("Perfil apagado com sucesso");
 
