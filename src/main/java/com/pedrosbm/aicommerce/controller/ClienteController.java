@@ -2,6 +2,8 @@ package com.pedrosbm.aicommerce.controller;
 
 import java.util.List;
 
+import static org.springframework.http.HttpStatus.NOT_FOUND;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
@@ -50,11 +53,14 @@ public class ClienteController {
     public ResponseEntity<String> deleteUser(@PathVariable Long id) {
         try {
             repository.deleteById(id);
+            verify(id);
+
             return ResponseEntity.ok("Perfil apagado com sucesso");
 
-        } catch (IllegalArgumentException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-            return ResponseEntity.notFound().build();
+
+            return ResponseEntity.badRequest().build();
         }
     }
 
@@ -62,11 +68,22 @@ public class ClienteController {
     public ResponseEntity<Cliente> updateUser(@RequestBody @Valid Cliente cliente) {
         try {
             repository.save(cliente);
+            verify(cliente.getClienteId());
+
             return ResponseEntity.ok(cliente);
 
-        } catch (IllegalArgumentException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.badRequest().build();
         }
     }
+
+    private void verify(Long id) {
+        repository
+            .findById(id)
+            .orElseThrow(() -> new ResponseStatusException(
+                                    NOT_FOUND, 
+                                    "id da categoria não encontrado"
+                                ));
+    } 
 }
