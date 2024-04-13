@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.pedrosbm.aicommerce.model.Cliente;
 import com.pedrosbm.aicommerce.repository.ClienteRepository;
 
 import jakarta.validation.Valid;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
 @RequestMapping(path = "/Cliente")
@@ -51,9 +51,9 @@ public class ClienteController {
     }
 
     @DeleteMapping
-    public ResponseEntity<String> deleteUser(@RequestBody @Valid Cliente cliente) {
+    public ResponseEntity<String> deleteUser(@RequestBody Long clienteId) {
         try {
-            repository.delete(cliente);
+            repository.deleteById(clienteId);
             return ResponseEntity.ok("Perfil apagado com sucesso");
 
         } catch (IllegalArgumentException e) {
