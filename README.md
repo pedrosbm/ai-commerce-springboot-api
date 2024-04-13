@@ -94,11 +94,12 @@ Status code	|Mensagem
 
 ---
 ### 4-atualizar cliente
-PUT `cliente/3`
+PUT `cliente`
 
 Request Body:
 ```json
 {
+  "clienteId": 3,
   "nome": "Pedro Silva",
   "email": "pedro.silva@example.com",
   "telefone": "(11) 99876-5432",
