@@ -46,7 +46,7 @@ public class ClienteController {
         return ResponseEntity.ok(cliente);
     }
 
-    @DeleteMapping
+    @DeleteMapping("{id}")
     public ResponseEntity<String> deleteUser(@RequestBody Long clienteId) {
         try {
             repository.deleteById(clienteId);
