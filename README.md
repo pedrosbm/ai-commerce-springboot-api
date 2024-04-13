@@ -8,11 +8,11 @@ Essa api cuida dos protocolos padrões do e-commerce,
 
 Verbo|Tipo da requisição	|Descrição
 |--|--|--|
-clientes|	GET	|Obtém todos os clientes cadastrados
-clientes/{id}|	GET|	Obtém os dados de um cliente específico
-clientes	|POST|	Cria um novo cliente
-clientes/{id}|	PUT	|Atualiza os dados de um cliente
-clientes/{id}	|DELETE|	Apaga um cliente
+cliente|	GET	|Obtém todos os clientes cadastrados
+cliente/{id}|	GET|	Obtém os dados de um cliente específico
+cliente	|POST|	Cria um novo cliente
+cliente/{id}|	PUT	|Atualiza os dados de um cliente
+cliente/{id}	|DELETE|	Apaga um cliente
 
 ## Demonstração/ exemplos dos endpoints
 
@@ -24,7 +24,7 @@ Retorno:
 ``` json
 [
   {
-    "cliente_id": 1,
+    "clienteId": 1,
     "nome": "João",
     "email": "joao@example.com",
     "telefone": "(11) 91234-5678",
@@ -32,7 +32,7 @@ Retorno:
   },
 
   {
-    "cliente_id": 2,
+    "clienteId": 2,
     "nome": "Maria",
     "email": "maria@example.com",
     "telefone": "(11) 98765-4321",
@@ -48,11 +48,11 @@ Status code	|Mensagem
 ---
 
 ### 2-obter cliente por id
-GET `clientes/1`
+GET `cliente/1`
 
 ```json
 {
-  "cliente_id": 1,
+  "clienteId": 1,
   "nome": "João",
   "email": "joao@example.com",
   "telefone": "(11) 91234-5678",
@@ -66,7 +66,7 @@ Status code|	Mensagem
 404	|Cliente não encontrado
 ---
 ### 3-criar cliente
-POST `clientes`
+POST `cliente`
 
 Request body:
 ```json
@@ -81,7 +81,7 @@ Request body:
 Retorno:
 ```json
 {
-  "cliente_id": 3,
+  "clienteId": 3,
   "nome": "Pedro",
   "email": "pedro@example.com",
   "telefone": "(11) 99876-5432",
@@ -94,7 +94,7 @@ Status code	|Mensagem
 
 ---
 ### 4-atualizar cliente
-PUT `clientes/3`
+PUT `cliente/3`
 
 Request Body:
 ```json
@@ -109,7 +109,7 @@ Request Body:
 Retorno:
 ```json
 {
-  "cliente_id": 3,
+  "clienteId": 3,
   "nome": "Pedro Silva",
   "email": "pedro.silva@example.com",
   "telefone": "(11) 99876-5432",
@@ -119,7 +119,7 @@ Retorno:
 
 ---
 ### 5-apagar cliente
-DELETE clientes/3
+DELETE `cliente/3`
 
 Status code	|Mensagem
 |--|--|
