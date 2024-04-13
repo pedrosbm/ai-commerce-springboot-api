@@ -47,9 +47,9 @@ public class ClienteController {
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<String> deleteUser(@PathVariable Long clienteId) {
+    public ResponseEntity<String> deleteUser(@PathVariable Long id) {
         try {
-            repository.deleteById(clienteId);
+            repository.deleteById(id);
             return ResponseEntity.ok("Perfil apagado com sucesso");
 
         } catch (IllegalArgumentException e) {
