@@ -32,9 +32,9 @@ public class ClienteController {
     public ResponseEntity<Cliente> getUser(@PathVariable Long id) {
 
         return repository
-                    .findById(id)
-                    .map(ResponseEntity::ok)
-                    .orElse(ResponseEntity.notFound().build());
+                .findById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @GetMapping
@@ -51,39 +51,25 @@ public class ClienteController {
 
     @DeleteMapping("{id}")
     public ResponseEntity<String> deleteUser(@PathVariable Long id) {
-        try {
-            verify(id);
-            repository.deleteById(id);
+        verify(id);
+        repository.deleteById(id);
 
-            return ResponseEntity.ok("Perfil apagado com sucesso");
-
-        } catch (Exception e) {
-            e.printStackTrace();
-
-            return ResponseEntity.badRequest().build();
-        }
+        return ResponseEntity.ok("Perfil apagado com sucesso");
     }
 
     @PutMapping
     public ResponseEntity<Cliente> updateUser(@RequestBody @Valid Cliente cliente) {
-        try {
-            verify(cliente.getClienteId());
-            repository.save(cliente);
+        verify(cliente.getClienteId());
+        repository.save(cliente);
 
-            return ResponseEntity.ok(cliente);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseEntity.badRequest().build();
-        }
+        return ResponseEntity.ok(cliente);
     }
 
     private void verify(Long id) {
         repository
-            .findById(id)
-            .orElseThrow(() -> new ResponseStatusException(
-                                    NOT_FOUND, 
-                                    "id da categoria não encontrado"
-                                ));
-    } 
+                .findById(id)
+                .orElseThrow(() -> new ResponseStatusException(
+                        NOT_FOUND,
+                        "id da categoria não encontrado"));
+    }
 }
