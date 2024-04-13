@@ -38,7 +38,7 @@ public class ClienteController {
         }
     }
 
-    @GetMapping("/List")
+    @GetMapping
     public ResponseEntity<List<Cliente>> getUsers() {
         List<Cliente> clientes = repository.findAll();
         return ResponseEntity.ok(clientes);
