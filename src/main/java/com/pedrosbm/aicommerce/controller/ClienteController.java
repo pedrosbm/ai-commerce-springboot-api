@@ -27,15 +27,12 @@ public class ClienteController {
     private ClienteRepository repository;
 
     @GetMapping("{id}")
-    public ResponseEntity<Optional<Cliente>> getUser(@PathVariable Long id) {
-        try {
-            Optional<Cliente> cliente = repository.findById(id);
-            return ResponseEntity.ok(cliente);
-            
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-            return ResponseEntity.notFound().build();
-        }
+    public ResponseEntity<Cliente> getUser(@PathVariable Long id) {
+
+        return repository
+                    .findById(id)
+                    .map(ResponseEntity::ok) //reference method
+                    .orElse(ResponseEntity.notFound().build());
     }
 
     @GetMapping
@@ -64,11 +61,11 @@ public class ClienteController {
 
     @PutMapping
     public ResponseEntity<Cliente> updateUser(@RequestBody @Valid Cliente cliente) {
-        try{
+        try {
             repository.save(cliente);
             return ResponseEntity.ok(cliente);
 
-        } catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             e.printStackTrace();
             return ResponseEntity.notFound().build();
         }
