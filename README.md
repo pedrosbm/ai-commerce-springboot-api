@@ -14,6 +14,14 @@ No momento temos apenas o dominio de cliente completo com todos os verbos http, 
 
 [Video pitch](https://youtu.be/ftHpiM_o7Uk)
 
+[Requisições insomnia](requisições.json)
+
+## Diagrama de classes
+<img src="./markdown/diagrama de classes.png">
+
+## Diagrama Modelo lígico
+<img src="./markdown/diagrama de classes.png">
+
 ## Endpoints do cliente
 
 Verbo|Tipo da requisição	|Descrição
