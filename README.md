@@ -1,8 +1,16 @@
-# Ai commerce
+# Ai commerce By NovaTechSolutions
 
-Esse repositório é dedicado ao versionamento do ai commerce, projeto fundado pela NovaTech solutions em parceria com a plusoft. Nosso projeto se trata de um site de e-commerce integrado com ia, para empresas que buscam turbinar o seu site de vendas com a nossa solução tecnológica de recomendação de produtos.
+integrante|rm|funcao|
+|--|--|--|
+Arthur Koga |99503|DataBase & Cloud|
+Gabriel Benjamim |552254|Mobile & Quality Assurance|
+Henry Ribeiro |550684|DataBase, Cloud % Quality Assurance|
+Murilo José |99538|.Net|
+Pedro Sena Borges |98021| Spring & Ia|
 
-Essa api cuida dos protocolos padrões do e-commerce, 
+Esse repositório é dedicado ao versionamento do ai commerce, projeto fundado pela NovaTech solutions em parceria com a plusoft. Nosso projeto se trata de um site de e-commerce integrado com ia, para empresas que buscam turbinar o seu site de vendas com a nossa solução tecnológica de recomendação de produtos. Essa api cuida dos protocolos padrões do e-commerce e posteriormente o intermediador entre o nosso futuro modelo de ia e o cliente.
+
+[Video pitch](https://youtu.be/ftHpiM_o7Uk)
 
 ## Endpoints do cliente
 
