@@ -10,6 +10,8 @@ Pedro Sena Borges |98021| Spring & Ia|
 
 Esse repositório é dedicado ao versionamento do ai commerce, projeto fundado pela NovaTech solutions em parceria com a plusoft. Nosso projeto se trata de um site de e-commerce integrado com ia, para empresas que buscam turbinar o seu site de vendas com a nossa solução tecnológica de recomendação de produtos. Essa api cuida dos protocolos padrões do e-commerce e posteriormente o intermediador entre o nosso futuro modelo de ia e o cliente.
 
+No momento temos apenas o dominio de cliente completo com todos os verbos http, demais entidades do nosso sistema foram reservadas para as sprints futuras. Segue mais informações da ai commerce abaixo...
+
 [Video pitch](https://youtu.be/ftHpiM_o7Uk)
 
 ## Endpoints do cliente
