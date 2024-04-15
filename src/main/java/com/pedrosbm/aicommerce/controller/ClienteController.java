@@ -1,8 +1,8 @@
 package com.pedrosbm.aicommerce.controller;
 
-import java.util.List;
-
 import static org.springframework.http.HttpStatus.NOT_FOUND;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -39,13 +39,31 @@ public class ClienteController {
 
     @GetMapping
     public ResponseEntity<List<Cliente>> getUsers() {
-        List<Cliente> clientes = repository.findAll();
-        return ResponseEntity.ok(clientes);
+        try {
+            List<Cliente> clientes = repository.findAll();
+            return ResponseEntity.ok(clientes);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.internalServerError().build();
+        }
     }
 
     @PostMapping
     public ResponseEntity<Cliente> createUser(@RequestBody @Valid Cliente cliente) {
+        try {
+            repository.save(cliente);
+            return ResponseEntity.ok(cliente);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.internalServerError().build();
+        }
+    }
+
+    @PutMapping
+    public ResponseEntity<Cliente> updateUser(@RequestBody @Valid Cliente cliente) {
+        verify(cliente.getClienteId());
         repository.save(cliente);
+
         return ResponseEntity.ok(cliente);
     }
 
@@ -57,19 +75,19 @@ public class ClienteController {
         return ResponseEntity.ok("Perfil apagado com sucesso");
     }
 
-    @PutMapping
-    public ResponseEntity<Cliente> updateUser(@RequestBody @Valid Cliente cliente) {
-        verify(cliente.getClienteId());
-        repository.save(cliente);
 
-        return ResponseEntity.ok(cliente);
-    }
 
+     /**
+     * Verificação feita para os métodos de update e delete do cliente.
+     * @param id
+     */
     private void verify(Long id) {
+
         repository
                 .findById(id)
                 .orElseThrow(() -> new ResponseStatusException(
                         NOT_FOUND,
-                        "id da categoria não encontrado"));
+                        "Cliente não encontrado"));
+
     }
 }

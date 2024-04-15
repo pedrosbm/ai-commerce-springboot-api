@@ -14,13 +14,13 @@ No momento temos apenas o dominio de cliente completo com todos os verbos http, 
 
 [Video pitch](https://youtu.be/ftHpiM_o7Uk)
 
-[Requisições insomnia referentes ao cliente](requisições.json)
+[Requisições insomnia referentes ao cliente](markdown/requisições.json)
 
 ## Diagrama de classes
 <img src="./markdown/diagrama de classes.png">
 
 ## Diagrama Modelo lógico
-<img src="./markdown/diagrama de classes.png">
+<img src="./markdown/modelologico.png">
 
 ## Endpoints do cliente
 
