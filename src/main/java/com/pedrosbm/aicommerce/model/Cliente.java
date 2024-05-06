@@ -27,9 +27,5 @@ public class Cliente {
     private String senha;
 
     @NotBlank
-    @Size(min = 11, max = 11)
-    private String telefone;
-
-    @NotBlank
     private String endereco;
 }

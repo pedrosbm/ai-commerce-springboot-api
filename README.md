@@ -17,10 +17,10 @@ No momento temos apenas o dominio de cliente completo com todos os verbos http, 
 [Requisições insomnia referentes ao cliente](markdown/requisições.json)
 
 ## Diagrama de classes
-<img src="./markdown/diagrama de classes.png">
+<!-- <img src="./markdown/diagrama de classes.png"> mudar -->
 
-## Diagrama Modelo lógico
-<img src="./markdown/modelologico.png">
+## Diagrama de banco de dados
+<img src="./markdown/BancoDeDadosAtualizado.jfif">
 
 ## Endpoints do cliente
 
