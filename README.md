@@ -20,7 +20,7 @@ No momento temos apenas o dominio de cliente completo com todos os verbos http, 
 <!-- <img src="./markdown/diagrama de classes.png"> mudar -->
 
 ## Diagrama de banco de dados
-<img src="./markdown/BancoDeDadosAtualizado.jfif">
+<img src="./markdown/Modelo de banco de dados atualizado.png">
 
 ## Endpoints do cliente
 
