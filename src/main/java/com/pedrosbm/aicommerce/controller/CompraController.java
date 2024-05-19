@@ -26,14 +26,15 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+
 @RestController
-@RequestMapping(path = "/Compra")
+@RequestMapping(path = "/compra")
 public class CompraController {
 
     @Autowired
     CompraRepository repository;
 
-    @GetMapping("{id}")
+    @GetMapping("id/{id}")
     @ResponseStatus(FOUND)
     public ResponseEntity<Compra> getCompra(@PathVariable Long id) {
 
@@ -42,6 +43,14 @@ public class CompraController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
+
+    @GetMapping("/cliente/{nome}")
+    public ResponseEntity<List<Compra>> getMethodName(@PathVariable String nome) {
+        List<Compra> compras = repository.findByClienteNome(nome);
+
+        return ResponseEntity.ok(compras);
+    }
+    
 
     @GetMapping
     public ResponseEntity<List<Compra>> getCompras() {
