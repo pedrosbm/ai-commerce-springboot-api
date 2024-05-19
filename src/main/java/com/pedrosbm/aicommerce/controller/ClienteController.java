@@ -26,7 +26,7 @@ import com.pedrosbm.aicommerce.repository.ClienteRepository;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping(path = "/Cliente")
+@RequestMapping(path = "/cliente")
 public class ClienteController {
 
     @Autowired
