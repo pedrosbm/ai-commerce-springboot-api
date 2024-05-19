@@ -43,7 +43,7 @@ public class CompraController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @GetMapping("path")
+    @GetMapping
     public ResponseEntity<List<Compra>> getCompras() {
         List<Compra> compras = repository.findAll();
         return ResponseEntity.ok(compras);

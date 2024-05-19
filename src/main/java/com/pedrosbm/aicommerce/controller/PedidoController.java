@@ -43,7 +43,7 @@ public class PedidoController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @GetMapping("path")
+    @GetMapping
     public ResponseEntity<List<Pedido>> getPedidos() {
         List<Pedido> pedidos = repository.findAll();
         return ResponseEntity.ok(pedidos);
