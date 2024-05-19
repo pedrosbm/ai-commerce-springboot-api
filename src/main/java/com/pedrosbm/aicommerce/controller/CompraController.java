@@ -81,7 +81,7 @@ public class CompraController {
      * 
      * @param id
      * @throws ResponseStatusException
-     *                                 Se entidade não fôr encontrada
+     * Se entidade não fôr encontrada
      * @author
      *         Pedro Sena
      */

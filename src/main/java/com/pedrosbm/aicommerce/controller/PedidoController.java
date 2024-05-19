@@ -27,13 +27,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
-@RequestMapping(path = "/Pedido")
+@RequestMapping(path = "/pedido")
 public class PedidoController {
 
     @Autowired
     private PedidoRepository repository;
 
-    @GetMapping("{id}")
+    @GetMapping("id/{id}")
     @ResponseStatus(FOUND)
     public ResponseEntity<Pedido> getPedido(@PathVariable Long id) {
 
@@ -41,6 +41,12 @@ public class PedidoController {
                 .findById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("cliente/{nome}")
+    public ResponseEntity<List<Pedido>> getPedidoByCliente(@PathVariable String nome){
+        List<Pedido> pedidos = repository.findByClienteNome(nome);
+        return ResponseEntity.ok(pedidos);
     }
 
     @GetMapping
