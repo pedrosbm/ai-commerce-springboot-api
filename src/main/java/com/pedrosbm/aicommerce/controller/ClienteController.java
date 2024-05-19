@@ -53,8 +53,7 @@ public class ClienteController {
     @ResponseStatus(CREATED)
     public ResponseEntity<Cliente> createUser(@RequestBody @Valid Cliente cliente) {
         try {
-            repository.save(cliente);
-            return ResponseEntity.ok(cliente);
+            return ResponseEntity.ok(repository.save(cliente));
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.internalServerError().build();
@@ -65,9 +64,8 @@ public class ClienteController {
     @ResponseStatus(CREATED)
     public ResponseEntity<Cliente> updateUser(@RequestBody @Valid Cliente cliente) {
         verify(cliente.getId());
-        repository.save(cliente);
 
-        return ResponseEntity.ok(cliente);
+        return ResponseEntity.ok(repository.save(cliente));
     }
 
     @DeleteMapping("{id}")
@@ -80,7 +78,7 @@ public class ClienteController {
     }
 
      /**
-     * Verificação feita para os métodos de update e delete do cliente.
+     * Verificação feita para os métodos de update e delete.
      * @param id
      * @throws ResponseStatusException
      * Se entidade não fôr encontrada

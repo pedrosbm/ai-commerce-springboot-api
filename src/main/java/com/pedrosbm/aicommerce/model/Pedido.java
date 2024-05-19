@@ -1,6 +1,6 @@
 package com.pedrosbm.aicommerce.model;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -22,8 +22,8 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date dataPedido;
+    @DateTimeFormat(pattern = "DD/MM/YYYY")
+    private LocalDate dataPedido;
 
     private String statusPedido;
 
