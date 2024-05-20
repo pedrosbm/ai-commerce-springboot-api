@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.pedrosbm.aicommerce.model.NotaFiscal;
 
 public interface NotaFiscalRepository extends JpaRepository<NotaFiscal, Long>{
-    public NotaFiscal findByCompraId(Long id);
+    public NotaFiscal findByCompraCompraId(Long id);
 }

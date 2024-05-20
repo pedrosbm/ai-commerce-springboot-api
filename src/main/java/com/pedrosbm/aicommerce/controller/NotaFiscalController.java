@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.pedrosbm.aicommerce.model.NotaFiscal;
@@ -23,6 +25,8 @@ import com.pedrosbm.aicommerce.repository.NotaFiscalRepository;
 
 import jakarta.validation.Valid;
 
+@RestController
+@RequestMapping("/notafiscal")
 public class NotaFiscalController {
 
     @Autowired
@@ -48,7 +52,7 @@ public class NotaFiscalController {
     @GetMapping("/compra/{id}")
     @ResponseStatus(FOUND)
     public ResponseEntity<NotaFiscal> getNotasFiscalbyCompra(@PathVariable Long id) {
-            NotaFiscal Nf = repository.findByCompraId(id);
+            NotaFiscal Nf = repository.findByCompraCompraId(id);
             return ResponseEntity.ok(Nf);
     }
 

@@ -1,6 +1,6 @@
 package com.pedrosbm.aicommerce.model;
 
-import java.time.LocalTime;
+import java.time.LocalDate;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -22,7 +22,7 @@ public class NotaFiscal {
     private Long nfId;
 
     @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private LocalTime dataEmissao;
+    private LocalDate dataEmissao;
 
     @OneToOne
     private Compra compra;
