@@ -32,9 +32,8 @@ public class Produto {
     @PositiveOrZero
     private Long estoque;
 
-    //TODO: Implemetar classe de fornecedor
-    // @ManyToOne
-    // private Fornecedor fornecedor;
+    @ManyToOne
+    private Fornecedor fornecedor;
 
     @ManyToOne
     private Categoria categoria;
