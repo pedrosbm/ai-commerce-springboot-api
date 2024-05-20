@@ -24,7 +24,6 @@ public class ItemsPedido {
     @ManyToOne
     private Pedido pedido;
 
-    //TODO: Implemetar classe de produto
-    // @ManyToOne
-    // private Produto produto;
+    @ManyToOne
+    private Produto produto;
 }
