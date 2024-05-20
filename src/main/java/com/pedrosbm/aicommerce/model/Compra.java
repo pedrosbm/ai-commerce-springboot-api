@@ -15,7 +15,7 @@ public class Compra {
     
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    private Long compraId;
 
     @ManyToOne
     private Cliente cliente;

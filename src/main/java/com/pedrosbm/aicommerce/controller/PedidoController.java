@@ -68,7 +68,7 @@ public class PedidoController {
 
     @PutMapping
     public ResponseEntity<Pedido> updatePedido(@RequestBody Pedido pedido) {
-        verify(pedido.getId());
+        verify(pedido.getPedidoId());
 
         return ResponseEntity.ok(repository.save(pedido));
     }

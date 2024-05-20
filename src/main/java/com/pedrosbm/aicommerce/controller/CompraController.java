@@ -71,7 +71,7 @@ public class CompraController {
 
     @PutMapping
     public ResponseEntity<Compra> updateCompra(@RequestBody Compra compra) {
-        verify(compra.getId());
+        verify(compra.getCompraId());
 
         return ResponseEntity.ok(repository.save(compra));
     }

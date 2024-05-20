@@ -63,7 +63,7 @@ public class ClienteController {
     @PutMapping
     @ResponseStatus(CREATED)
     public ResponseEntity<Cliente> updateUser(@RequestBody @Valid Cliente cliente) {
-        verify(cliente.getId());
+        verify(cliente.getClienteId());
 
         return ResponseEntity.ok(repository.save(cliente));
     }
