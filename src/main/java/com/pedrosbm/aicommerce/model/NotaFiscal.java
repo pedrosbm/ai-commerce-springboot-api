@@ -16,7 +16,6 @@ import lombok.Data;
 @Data
 @Builder
 public class NotaFiscal {
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long nfId;

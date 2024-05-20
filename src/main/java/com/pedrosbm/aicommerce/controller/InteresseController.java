@@ -20,21 +20,21 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.pedrosbm.aicommerce.model.Produto;
-import com.pedrosbm.aicommerce.repository.ProdutoRepository;
+import com.pedrosbm.aicommerce.model.Interesse;
+import com.pedrosbm.aicommerce.repository.InteresseRepository;
 
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/produto")
-public class ProdutoController {
-
+@RequestMapping("interesse")
+public class InteresseController {
+    
     @Autowired
-    private ProdutoRepository repository;
+    private InteresseRepository repository;
 
     @GetMapping("{id}")
     @ResponseStatus(FOUND)
-    public ResponseEntity<Produto> getProduto(@PathVariable Long id) {
+    public ResponseEntity<Interesse> getUser(@PathVariable Long id) {
 
         return repository
                 .findById(id)
@@ -44,16 +44,16 @@ public class ProdutoController {
 
     @GetMapping
     @ResponseStatus(FOUND)
-    public ResponseEntity<List<Produto>> getProduto() {
-            List<Produto> Produtos = repository.findAll();
-            return ResponseEntity.ok(Produtos);
+    public ResponseEntity<List<Interesse>> getUsers() {
+            List<Interesse> Interesses = repository.findAll();
+            return ResponseEntity.ok(Interesses);
     }
 
     @PostMapping
     @ResponseStatus(CREATED)
-    public ResponseEntity<Produto> createProduto(@RequestBody @Valid Produto Produto) {
+    public ResponseEntity<Interesse> createUser(@RequestBody @Valid Interesse Interesse) {
         try {
-            return ResponseEntity.ok(repository.save(Produto));
+            return ResponseEntity.ok(repository.save(Interesse));
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.internalServerError().build();
@@ -62,19 +62,19 @@ public class ProdutoController {
 
     @PutMapping
     @ResponseStatus(CREATED)
-    public ResponseEntity<Produto> updateProduto(@RequestBody @Valid Produto Produto) {
-        verify(Produto.getProdutoId());
+    public ResponseEntity<Interesse> updateUser(@RequestBody @Valid Interesse Interesse) {
+        verify(Interesse.getInteresseId());
 
-        return ResponseEntity.ok(repository.save(Produto));
+        return ResponseEntity.ok(repository.save(Interesse));
     }
 
     @DeleteMapping("{id}")
     @ResponseStatus(OK)
-    public ResponseEntity<String> deleteProduto(@PathVariable Long id) {
+    public ResponseEntity<String> deleteUser(@PathVariable Long id) {
         verify(id);
         repository.deleteById(id);
 
-        return ResponseEntity.ok("Produto apagado com sucesso");
+        return ResponseEntity.ok("Interesse apagado com sucesso");
     }
 
      /**
@@ -90,7 +90,7 @@ public class ProdutoController {
         repository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(
                         NOT_FOUND,
-                        "Produto não encontrado"));
+                        "Interesse não encontrado"));
 
     }
 }

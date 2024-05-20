@@ -16,7 +16,6 @@ import lombok.Data;
 @Data
 @Builder
 public class Produto {
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long produtoId;
@@ -37,7 +36,6 @@ public class Produto {
     // @ManyToOne
     // private Fornecedor fornecedor;
 
-    //TODO: Implemetar classe de categoria
-    // @ManyToOne
-    // private Categoria categoria;
+    @ManyToOne
+    private Categoria categoria;
 }

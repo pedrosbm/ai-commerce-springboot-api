@@ -11,18 +11,11 @@ import lombok.Data;
 @Entity
 @Data
 @Builder
-public class ItemsPedido {
+public class Interesse {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long itemsId;
-
-    private Long quantidade;
-
-    private Double preco;
+    private Long interesseId;
 
     @ManyToOne
-    private Pedido pedido;
-
-    @ManyToOne
-    private Produto produto;
+    private Cliente cliente;
 }
