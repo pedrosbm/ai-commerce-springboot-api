@@ -10,6 +10,8 @@
 
 Esse repositório é dedicado ao versionamento da api do ai commerce, projeto fundado pela NovaTech solutions em parceria com a plusoft. Essa api rest se trata de um projeto spring boot, com servidor tomcat imbutido, basta clonar o repositório e executar a classe main. Nosso projeto se trata de um site de e-commerce integrado com ia, para empresas que buscam turbinar o seu site de vendas com a nossa solução tecnológica de recomendação de produtos. Essa api cuida dos protocolos padrões do e-commerce e posteriormente o intermediador entre o nosso futuro modelo de ia e o cliente.
 
+Nessa nova versão da api se encontra os demais dominios da aplicação prometidos na entrega anterior, utilizando jpa, querys personalizadas e relacionamento entre tabelas.
+
 ## Diagrama de banco de dados
 <img src="./markdown/Modelo de banco de dados atualizado.png">
 
