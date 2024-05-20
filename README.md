@@ -12,6 +12,8 @@ Esse repositório é dedicado ao versionamento da api do ai commerce, projeto fu
 
 Nessa nova versão da api se encontra os demais dominios da aplicação prometidos na entrega anterior, utilizando jpa, querys personalizadas e relacionamento entre tabelas.
 
+Para próximas sprints: Implementação de endpoints paginados + hateoas
+
 ## Diagrama de banco de dados
 <img src="./markdown/Modelo de banco de dados atualizado.png">
 
